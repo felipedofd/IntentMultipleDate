@@ -14,7 +14,7 @@
         android:theme="@style/Theme.IntentMultipleDate"
         tools:targetApi="31">
         <activity
-            android:name=".SeccondActivity"
+            android:name=".SecondActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
