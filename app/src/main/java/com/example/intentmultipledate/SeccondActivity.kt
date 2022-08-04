@@ -2,9 +2,10 @@ package com.example.intentmultipledate
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.drawToBitmap
 import com.example.intentmultipledate.databinding.ActivitySeccondBinding
 
-class SeccondActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySeccondBinding
 
@@ -12,5 +13,17 @@ class SeccondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySeccondBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val dataReceivedViaIntent = intent.extras
+        val name = dataReceivedViaIntent?.getString("name")
+        val image = dataReceivedViaIntent?.getInt("image")
+        val description = dataReceivedViaIntent?.getString("description")
+
+        binding.nameSecondActivity.text = name
+        binding.imageSecondActivity.setImageResource(image!!)
+        binding.descriptionSecondAtivity.text = description
+        binding.backButtonSecondActivity.setOnClickListener { finish() }
+
+
     }
 }
